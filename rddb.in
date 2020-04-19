@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat @DATADIR@/rddb/rubberduck.txt

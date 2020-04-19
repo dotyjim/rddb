@@ -1,0 +1,8 @@
+#!/bin/bash
+
+install -d @BINDIR@
+install -p ./rddb @BINDIR@
+install -d @DATADIR@/rddb
+install -p ./rubberduck.txt @DATADIR@/rddb
+#install -d @DATADIR@/doc/rddb
+#install ./LICENSE @DATADIR@/doc/rddb

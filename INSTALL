@@ -1,0 +1,29 @@
+## CentOS/RHEL 8
+This assumes you have an existing rpmbuild workspace laid out in the standard format.
+rpmbuild
+ |-SPECS
+ |-SOURCES
+ |-RPMS
+ |-SRMPS
+ |-BUILD
+ |-BUILDROOT
+
+workspace
+ |-rddb
+
+cp rddb/rddb.spec rpmbuild/SPECS/rddb.spec
+cp -R rddb rddb-VERSION #(e.g. 0.1)
+
+workspace
+ |-rddb
+ |-rddb-0.1
+
+tar cfz rddb-0.1.tar.gz rddb-0.1/
+
+cp rddb-0.1.tar.gz SOURCES/
+
+cd rpmbuild/SPECS
+rpmbuild -ba rddb.spec
+
+cd ../RPMS/x86_64
+sudo dnf install ./rddb-0.1-42.el8.x86_64.rpm
